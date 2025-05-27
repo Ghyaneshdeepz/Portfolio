@@ -25,7 +25,7 @@ const Hero = ({ className }) => {
       <div className="absolute bottom-0 left-0 right-0 h-40 -z-10 bg-gradient-to-t from-white to-transparent" />
 
      
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
+<div className="relative z-10 flex -mt-10 mb-10 sm:mb-0 h-full flex-col items-center justify-center px-4 text-center">
         <h1 className="mb-6 text-4xl sm:text-6xl font-bold text-gray-900 perspective-1000">
           Full Stack Developer for{" "}
           <span
