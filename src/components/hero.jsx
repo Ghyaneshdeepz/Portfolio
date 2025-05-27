@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const Hero = ({ className }) => {
-  const words = ["Website", "Mobile App", "Frontend"];
+  const words = ["Websites", "Mobile Apps", "Frontends"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isFlipping, setIsFlipping] = useState(false);
 
@@ -11,8 +11,8 @@ const Hero = ({ className }) => {
       setTimeout(() => {
         setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
         setIsFlipping(false);
-      }, 300); 
-    }, 2000); 
+      }, 600); 
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -24,23 +24,22 @@ const Hero = ({ className }) => {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,white,transparent)]" />
       <div className="absolute bottom-0 left-0 right-0 h-40 -z-10 bg-gradient-to-t from-white to-transparent" />
 
-   
+     
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
-        <h1 className="mb-6 text-4xl sm:text-6xl font-bold text-gray-900">
-          Full Stack{" "}
+        <h1 className="mb-6 text-4xl sm:text-6xl font-bold text-gray-900 perspective-1000">
+          Full Stack Developer for{" "}
           <span
-            className={`inline-block text-[#10c986] transition-transform duration-300 ease-in-out ${
-              isFlipping ? "rotate-x-180 blur-sm" : "rotate-x-0"
+            className={`inline-block text-[#10c986] transition-transform duration-600 ease-in-out ${
+              isFlipping ? "rotate-x-180" : "rotate-x-0"
             }`}
             style={{
               display: "inline-block",
               transformStyle: "preserve-3d",
-              transition: "transform 0.3s ease, filter 0.3s ease",
+              backfaceVisibility: "hidden",
             }}
           >
             {words[currentWordIndex]}
-          </span>{" "}
-          Developer
+          </span>
         </h1>
 
         <p className="max-w-xl text-lg font-medium text-gray-600 mb-8">
