@@ -17,11 +17,10 @@ function App() {
     <Navbar></Navbar>
     <Hero></Hero>
     <Aboutus></Aboutus>
-    
-    </div>
     <Projects></Projects>
     <Skills></Skills>
     <Contact></Contact>
+    </div>
     <Footer></Footer>
     </>
   )
