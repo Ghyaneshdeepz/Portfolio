@@ -14,7 +14,7 @@ const Navbar = ({ className }) => {
         <nav className={`bg-white sticky top-0 z-50 shadow-[0px_15px_18px_rgba(0,0,0,0.06)] px-6 py-3 rounded-2xl transition-all duration-500 ${className}`}>
             <div className="flex justify-between items-center">
                 <div className="flex items-center space-x-4 sm:space-x-8">
-                    <div className="px-3 py-3 bg-[#00ca86] rounded-[1.3rem]">
+                    <div className="px-2 py-2 sm:px-3 sm:py-3 bg-[#00ca86] rounded-[1rem] sm:rounded-[1.3rem]">
                         <h1 className="font-bold text-xl sm:text-2xl text-white ">TB</h1>
                     </div>
                     <div className="font-montserrat font-bold text-lg sm:text-2xl text-[#10c986]">TechBeedi</div>

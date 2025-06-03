@@ -17,7 +17,6 @@ const skills = [
   { name: "Python", icon: <FaPython color="#3776AB" /> },
   { name: "Java", icon: <FaJava color="#f89820" /> },
   { name: "UI/UX Design", icon: <FaPaintBrush color="#7c3aed" /> },
-
 ];
 
 const Skills = ({ className }) => {
@@ -25,8 +24,8 @@ const Skills = ({ className }) => {
     <div
       className={`h-auto sm:h-[60vh] bg-white py-10 px-5 relative overflow-visible ${className}`}
     >
- 
-      <div className="absolute w-[15rem] h-[15rem] top-[3rem] left-[3rem] bg-[#41a974] rounded-full blur-3xl opacity-30 -z-10"></div>
+      {/* Background blur removed to reduce GPU load */}
+      <div className="absolute w-[15rem] h-[15rem] top-[3rem] left-[3rem] bg-[#41a974] rounded-full opacity-20 -z-10"></div>
 
       <h1 className="w-full sm:max-w-[60rem] mx-auto text-center text-[#2e564d] mb-8 font-bold sm:text-[1.8rem] text-[1.2rem]">
         My Skills
@@ -38,10 +37,9 @@ const Skills = ({ className }) => {
             key={index}
             className="
               flex flex-col items-center p-5 rounded-2xl
-              border border-[#2e564d] bg-white/30 backdrop-blur-lg
-              shadow-lg ring-1 ring-white/10
-              transform transition duration-300 ease-in-out
-              hover:rotate-[0.5deg] hover:scale-[1.01] hover:shadow-2xl cursor-default
+              border border-[#2e564d] bg-white shadow-sm
+              transition-transform duration-200 ease-in-out
+              hover:scale-105 will-change-transform cursor-default
             "
           >
             <div className="text-5xl mb-3">{icon}</div>

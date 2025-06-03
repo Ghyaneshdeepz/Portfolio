@@ -29,6 +29,9 @@ const Aboutus = ({ className }) => {
           <p className="w-full sm:max-w-[60rem] text-center text-sm sm:text-xl text-gray-700 leading-relaxed">
             👨‍💻 I’m an MCA student and passionate full stack developer skilled in MERN stack, React Native, Tailwind CSS, and UI/UX design. 🚀 I’ve built projects like an IoT-based air quality monitor, a student portfolio management system, and a face recognition attendance tracker. 🎥 I also run the TechBeedi YouTube channel, where I share coding tutorials, project walkthroughs, and tech tips to help others grow. 💡 I love creating innovative, user-friendly solutions that make a real impact.
           </p>
+          <div className="p-1 mt-5 cursor-pointer rounded-2xl text-white font-bold flex w-50 justify-center mx-auto bg-[#00ca86]">
+Download Resume
+          </div>
         </div>
       </div>
     </div>

@@ -19,7 +19,7 @@ const projects = [
 const Projects = ({ className }) => {
   return (
     <section
-      className={`min-h-[60vh] bg-[#F6F6F6] py-12 px-6 sm:px-16 ${className}`}
+      className={`min-h-[60vh] rounded-2xl bg-[#F6F6F6] py-12 px-6 sm:px-16 ${className}`}
     >
      
       <h1 className="text-center text-[#2E564D] font-extrabold text-3xl sm:text-4xl mb-12 tracking-wide">

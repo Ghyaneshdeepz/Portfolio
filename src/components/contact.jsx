@@ -1,61 +1,64 @@
-
 import React from "react";
 
-const Contact=({classname})=>{
-return(
-<div className="h- w-full gap-0.5 flex flex-col sm:flex-row p-8 ">
-<div className="w-full sm:w-1/2 flex flex-col items-center justify-center px-10">
-<h2 className="text-3xl font-bold text-[#2e564d]">Get in Touch</h2>
-  <p className="text-xl font-semibold text-center text-gray-800 mt-5">Interested in working together or have any questions? Feel free to get in touch — I’m always open to new opportunities, collaborations, or simply connecting with fellow tech enthusiasts.</p>
-  
+const Contact = ({ className }) => {
+  return (
+    <div className={`w-full flex flex-col sm:flex-row gap-6 px-4 py-10 ${className}`}>
+      {/* Left Text Block */}
+      <div className="w-full sm:w-1/2 flex flex-col items-center justify-center px-4 sm:px-10 text-center sm:text-left">
+        <h2 className="text-3xl font-bold text-[#2e564d]">Get in Touch</h2>
+        <p className="text-lg sm:text-xl font-medium text-gray-800 mt-4">
+          Interested in working together or have any questions? Feel free to get in touch —
+          I’m always open to new opportunities, collaborations, or simply connecting with fellow tech enthusiasts.
+        </p>
+      </div>
 
-</div>
-<div className="w-full sm:w-1/2 p-10 relative">
-<div className="absolute flex items-center inset-0 z-0 h-full justify-center" >
-<div className=" w-[15rem] h-[15rem] mx-auto bg-green-200 rounded-full blur-3xl"></div>
+      {/* Right Contact Form */}
+      <div className="w-full sm:w-1/2 p-4 sm:p-10 relative">
+        {/* Background Circle - without blur */}
+        <div className="absolute inset-0 flex items-center justify-center z-0">
+          <div className="w-[12rem] h-[12rem] bg-green-200 opacity-20 rounded-full"></div>
+        </div>
 
-</div>
-<div className="w-full h-full relative z-10">
-  <div
-    className="
-      rounded-2xl border border-[#2e564d] bg-white/30 backdrop-blur-lg shadow-lg ring-1 ring-white/10
-      transform transition duration-300 ease-in-out hover:rotate-[0.5deg] hover:scale-[1.01] hover:shadow-2xl
-    "
-  >
-    <div className="grid grid-cols-2 p-8 gap-4">
-      <input
-        type="text"
-        placeholder="Enter Your Name"
-        className="border border-[#2e564d] bg-white/30 backdrop-blur-lg p-3 rounded-md"
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        className="border border-[#2e564d] bg-white/30 backdrop-blur-lg p-3 rounded-md"
-      />
-      <input
-        type="text"
-        placeholder="Occupation"
-        className="border border-[#2e564d] bg-white/30 backdrop-blur-lg p-3 rounded-md"
-      />
-      <input
-        type="number"
-        placeholder="Phone No"
-        className="border border-[#2e564d] bg-white/30 backdrop-blur-lg p-3 rounded-md"
-      />
-      <input
-        type="text"
-        placeholder="Work Discription"
-        className="col-span-2 border border-[#2e564d] bg-white/30 backdrop-blur-lg p-3 rounded-md"
-      />
+        {/* Form Container */}
+        <div className="relative z-10 border border-[#2e564d] bg-white rounded-2xl shadow-md p-6 sm:p-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input
+              type="text"
+              placeholder="Enter Your Name"
+              className="p-3 border border-[#2e564d] rounded-md w-full"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              className="p-3 border border-[#2e564d] rounded-md w-full"
+            />
+            <input
+              type="text"
+              placeholder="Occupation"
+              className="p-3 border border-[#2e564d] rounded-md w-full"
+            />
+            <input
+              type="number"
+              placeholder="Phone No"
+              className="p-3 border border-[#2e564d] rounded-md w-full"
+            />
+            <input
+              type="text"
+              placeholder="Work Description"
+              className="p-3 border border-[#2e564d] rounded-md col-span-1 sm:col-span-2 w-full"
+            />
+
+            {/* Submit Button */}
+            <div className="col-span-1 sm:col-span-2 mt-4">
+              <button className="w-full bg-[#2e564d] text-white py-3 rounded-md hover:bg-[#24483e] transition duration-200">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
-</div>
-
-</div>
-);
+  );
 };
-export default Contact;
 
+export default Contact;
