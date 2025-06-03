@@ -46,18 +46,18 @@ const Navbar = ({ className }) => {
 
             </div>
 
-            <div className={`sm:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
-                <div className="flex flex-col items-center space-y-4 p-3">
-                    <a href="#" className="text-gray-800 font-semibold">Home</a>
-                    <a href="#" className="hover:bg-amber-50 text-gray-800 font-semibold">About Me</a>
+           <div className={`sm:hidden overflow-hidden transition-all duration-500 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+    <div className="flex flex-col items-center space-y-4 p-3">
+        <a href="#" className="text-gray-800 font-semibold">Home</a>
+        <a href="#" className="hover:bg-amber-50 text-gray-800 font-semibold">About Me</a>
+        <a href="#" className="text-gray-800 flex items-center font-semibold">
+            <span>Gallery</span>
+            <MdArrowDropDown className="text-xl" />
+        </a>
+        <a href="#" className="text-gray-800 font-semibold">Updates</a>
+    </div>
+</div>
 
-                    <a href="#" className="text-gray-800 flex items-center font-semibold">
-                        <span>Gallery</span>
-                        <MdArrowDropDown className="text-xl" />
-                    </a>
-                    <a href="#" className="text-gray-800 font-semibold">Updates</a>
-                </div>
-            </div>
         </nav>
     );
 };
