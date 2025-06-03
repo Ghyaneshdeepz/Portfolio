@@ -42,7 +42,7 @@ const Aboutus = ({ className }) => {
   <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 px-4 sm:px-8">
     <div className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto p-6 rounded-xl shadow-lg relative">
       <button
-        className="absolute top-3 right-3 bg-red-500 text-white px-4 py-1 rounded-full"
+        className="absolute top-3 right-3 bg-[#41a974] cursor-pointer text-white px-4 py-1 rounded-full"
         onClick={() => setIsOpen(false)}
 
             >
@@ -66,7 +66,7 @@ const Aboutus = ({ className }) => {
                 <h2 className="text-xl font-semibold border-b pb-1 border-[#2e564d]">Projects</h2>
                 <ul className="list-disc list-inside mt-2 text-sm space-y-2">
                   <li>
-                    <strong>Coffee Beanery:</strong> A web app using PHP & MySQL with Admin/User modules for coffee shops and customers.
+<strong>IoT AQI Monitor App:</strong> A mobile app built using React Native with a Node.js + Express backend for monitoring air quality index data in real-time using IoT sensors.
                   </li>
                   <li>
                     <strong>Expense Tracker:</strong> Java + MySQL app to track income and expenses.
