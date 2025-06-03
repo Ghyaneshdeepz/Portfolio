@@ -18,32 +18,37 @@ const Skills = ({ className }) => {
         Showcase
       </h1>
 
-     
-      <div
-        className="flex space-x-6 overflow-x-auto no-scrollbar relative z-20"
-        style={{ scrollBehavior: "smooth" }}
-      >
-        <img
-          src={mobl}
-          alt="Mobile Design 1"
-          className="flex-shrink-0 w-[80vw] sm:w-[30vw] max-w-[300px] object-contain rounded-2xl shadow-lg"
-        />
-        <img
-          src={mob2}
-          alt="Mobile Design 2"
-          className="flex-shrink-0 w-[80vw] sm:w-[30vw] max-w-[300px] object-contain rounded-2xl shadow-lg"
-        />
+      <div className="relative z-20 flex flex-col sm:flex-row sm:space-x-12 sm:items-center">
+  
+        <div className="flex space-x-6 overflow-x-auto no-scrollbar sm:overflow-visible sm:space-x-4 sm:flex-shrink-0 sm:w-1/2">
+          <img
+            src={mobl}
+            alt="Mobile Design 1"
+            className="flex-shrink-0 w-[80vw] sm:w-full max-w-[300px] object-contain rounded-2xl shadow-lg"
+          />
+          <img
+            src={mob2}
+            alt="Mobile Design 2"
+            className="flex-shrink-0 w-[80vw] sm:w-full max-w-[300px] object-contain rounded-2xl shadow-lg"
+          />
+        </div>
+
+        
+        <div className="hidden sm:block sm:w-1/2 text-[#2e564d] mt-8 sm:mt-0">
+          <h2 className="text-4xl font-semibold mb-4">AQI Monitoring App</h2>
+          <p className="text-2xl leading-relaxed">
+            This project is a <strong>MERN stack</strong> and <strong>React Native</strong>-based application designed to monitor Air Quality Index (AQI) values in real time. It integrates IoT sensors to collect data and presents the information in a mobile-friendly dashboard, providing users with easy access to environmental conditions anytime, anywhere.
+          </p>
+        </div>
       </div>
 
       <style jsx>{`
-        /* Hide scrollbar for WebKit browsers */
         .no-scrollbar::-webkit-scrollbar {
           display: none;
         }
-        /* Hide scrollbar for IE, Edge and Firefox */
         .no-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
     </div>

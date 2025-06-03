@@ -33,7 +33,7 @@ const Navbar = ({ className }) => {
   <button className="hidden sm:inline-block bg-[#ccf4e7] px-2 text-[#41a974] text-sm sm:text-[1rem] sm:px-5 sm:py-2 font-semibold py-1 rounded-xl whitespace-nowrap ">
     Report Issue
   </button>
-  <button className="bg-[#00ca86] px-3 text-gray-800 text-xs sm:text-[1rem] sm:px-4 sm:py-2 font-bold py-1 rounded-md whitespace-nowrap">
+  <button className="bg-[#00ca86] px-3 py-2 text-gray-800 text-xs sm:text-[1rem] sm:px-4 sm:py-3 font-bold rounded-md whitespace-nowrap">
     Contact Me
   </button>
   <div>
@@ -46,8 +46,9 @@ const Navbar = ({ className }) => {
 
             </div>
 
-           <div className={`sm:hidden overflow-hidden transition-all duration-500 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-    <div className="flex flex-col items-center space-y-4 p-3">
+          <div className={`sm:hidden px-6 overflow-hidden transition-all duration-500 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+  <div className="flex flex-col items-start space-y-4 py-3">
+
         <a href="#" className="text-gray-800 font-semibold">Home</a>
         <a href="#" className="hover:bg-amber-50 text-gray-800 font-semibold">About Me</a>
         <a href="#" className="text-gray-800 flex items-center font-semibold">
