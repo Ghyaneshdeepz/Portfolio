@@ -18,7 +18,7 @@ const Skills = ({ className }) => {
         Showcase
       </h1>
 
-      {/* Scroll container */}
+     
       <div
         className="flex space-x-6 overflow-x-auto no-scrollbar relative z-20"
         style={{ scrollBehavior: "smooth" }}
