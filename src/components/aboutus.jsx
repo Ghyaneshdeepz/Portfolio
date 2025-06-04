@@ -39,7 +39,7 @@ const Aboutus = ({ className }) => {
       </div>
 
 {isOpen && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 px-4 sm:px-8">
+  <div className="fixed inset-0 bg-black/30 bg-opacity-50 flex justify-center items-center z-50 px-4 sm:px-8">
     <div className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto p-6 rounded-xl shadow-lg relative">
       <button
         className="absolute top-3 right-3 bg-[#41a974] cursor-pointer text-white px-4 py-1 rounded-full"
