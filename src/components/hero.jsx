@@ -2,7 +2,7 @@ import React from "react";
 import { FlipWords } from "./ui/flip-words";
 
 const Hero = ({ className }) => {
-  const words = ["Websites", "Mobileapp", "Frontends"];
+  const words = ["Websites", "MobileApp", "Frontends"];
 
   return (
     <div className={`relative h-[60vh] overflow-hidden ${className || ""}`}>
@@ -11,17 +11,27 @@ const Hero = ({ className }) => {
       <div className="absolute bottom-0 left-0 right-0 h-40 -z-10 bg-gradient-to-t from-white to-transparent" />
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
-      <h1 className="mb-6 text-4xl sm:text-6xl font-bold text-gray-900 text-center">
-  Full Stack Developer for{" "}
-  <span
-    className="inline-block relative align-middle"
-    style={{ height: "1.5em", width: "200px" }} // adjust width if needed
-  >
-    <FlipWords words={words} />
-  </span>
-</h1>
+        <h1
+          className="mb-6 text-4xl sm:text-6xl font-bold text-gray-900 text-center"
+          style={{ lineHeight: "1.5em" }} 
+        >
+          Full Stack Developer for{" "}
+          <span
+            className="inline-block relative align-middle"
+            style={{
+  height: "1.5em",
+  width: "200px",
+  verticalAlign: "middle",
+  lineHeight: "1.5em",
+  display: "inline-block",
+  position: "relative",
+  transform: "translateY(-5px)",
+}}
 
-
+          >
+            <FlipWords words={words} />
+          </span>
+        </h1>
 
         <p className="max-w-xl text-lg font-medium text-gray-600 mb-8">
           MCA student skilled in React, Tailwind, React Native, Expo, and UI/UX — building modern web and mobile apps.

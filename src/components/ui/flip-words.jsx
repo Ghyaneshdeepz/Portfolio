@@ -1,4 +1,3 @@
-"use client"; // if you are using Next.js app router, otherwise remove this line
 
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -18,13 +17,18 @@ export const FlipWords = ({ words, duration = 3000, className }) => {
   const currentWord = words[currentIndex];
 
   return (
-    // Wrapper that reserves space so text outside doesn't move
+    
     <span
-      className={cn(
-        "relative inline-block",
-        className
-      )}
-      style={{ width: "max-content", minWidth: "8ch", display: "inline-block", height: "1.4em" }}
+      className={cn("relative inline-block", className)}
+      style={{
+        width: "max-content",
+        minWidth: "8ch",
+        display: "inline-block",
+        height: "1.5em",         
+        verticalAlign: "middle", 
+        lineHeight: "1.5em",     
+        position: "relative",    
+      }}
       aria-live="polite"
     >
       <AnimatePresence mode="wait">
