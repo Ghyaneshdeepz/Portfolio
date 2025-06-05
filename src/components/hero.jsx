@@ -1,46 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { FlipWords } from "./ui/flip-words";
 
 const Hero = ({ className }) => {
   const words = ["Websites", "Mobile Apps", "Frontends"];
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [isFlipping, setIsFlipping] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsFlipping(true);
-      setTimeout(() => {
-        setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-        setIsFlipping(false);
-      }, 600); 
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
-    <div className={`relative h-[60vh] overflow-hidden ${className}`}>
-     
+    <div className={`relative h-[60vh] overflow-hidden ${className || ""}`}>
       <div className="absolute inset-0 -z-20 bg-white bg-[radial-gradient(#334155_1.2px,transparent_1px)] [background-size:16px_16px]" />
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,white,transparent)]" />
       <div className="absolute bottom-0 left-0 right-0 h-40 -z-10 bg-gradient-to-t from-white to-transparent" />
 
-     
-<div className="relative z-10 flex -mt-4 mb-10 sm:mb-0 h-full flex-col items-center justify-center px-4 text-center">
-        <h1 className="mb-6 text-4xl sm:text-6xl font-bold text-gray-900 perspective-1000">
-          Full Stack Developer for{" "}
-          <span
-            className={`inline-block text-[#10c986] transition-transform duration-600 ease-in-out ${
-              isFlipping ? "rotate-x-180" : "rotate-x-0"
-            }`}
-            style={{
-              display: "inline-block",
-              transformStyle: "preserve-3d",
-              backfaceVisibility: "hidden",
-            }}
-          >
-            {words[currentWordIndex]}
-          </span>
-        </h1>
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
+      <h1 className="mb-6 text-4xl sm:text-6xl font-bold text-gray-900 text-center">
+  Full Stack Developer for{" "}
+  <span
+    className="inline-block relative align-middle"
+    style={{ height: "1.5em", width: "200px" }} // adjust width if needed
+  >
+    <FlipWords words={words} />
+  </span>
+</h1>
+
+
 
         <p className="max-w-xl text-lg font-medium text-gray-600 mb-8">
           MCA student skilled in React, Tailwind, React Native, Expo, and UI/UX — building modern web and mobile apps.
