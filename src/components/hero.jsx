@@ -2,7 +2,7 @@ import React from "react";
 import { FlipWords } from "./ui/flip-words";
 
 const Hero = ({ className }) => {
-  const words = ["Websites", "Mobile Apps", "Frontends"];
+  const words = ["Websites", "Mobileapp", "Frontends"];
 
   return (
     <div className={`relative h-[60vh] overflow-hidden ${className || ""}`}>
