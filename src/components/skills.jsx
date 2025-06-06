@@ -1,93 +1,67 @@
-import React, { useState, useEffect, useRef } from "react";
-import mobl from '../assets/mbl1.jpg';
-import mob2 from '../assets/mbl2.jpg';
+import React, { useState, useEffect } from "react";
+import mobl from "../assets/mbl1.jpg";
+import mobl2 from "../assets/mbl2.jpg";
 
 const Skills = ({ className }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const scrollRef = useRef(null);
-
-  // Update active dot on scroll
-  const handleScroll = () => {
-    const scrollLeft = scrollRef.current.scrollLeft;
-    const width = scrollRef.current.offsetWidth;
-    const index = Math.round(scrollLeft / width);
-    setActiveIndex(index);
-  };
+  const images = [mobl, mobl2];
+  const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
-    const ref = scrollRef.current;
-    if (ref) {
-      ref.addEventListener("scroll", handleScroll);
-      return () => ref.removeEventListener("scroll", handleScroll);
-    }
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className={`relative h-auto sm:min-h-[80vh] bg-white py-10 px-5 overflow-visible ${className}`}>
-      {/* Background grid */}
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]" />
-      {/* Radial white fade */}
-      <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_90%)]" />
+    <div className={`flex flex-col md:flex-row items-center gap-0 sm:gap-85 px-20 py-15 ${className}`}>
+      
+      <div className="max-w-xl text-center md:text-left space-y-6">
+        <h1 className="text-4xl font-bold text-black">
+          Real-Time AQI Monitoring App
+        </h1>
+        <p className="text-gray-600 text-lg">
+          Developed a mobile application to monitor real-time Air Quality Index (AQI) data using React Native and Tailwind CSS. The backend was built with Node.js and Express, connected to MongoDB Atlas for cloud data storage and retrieval.
+        </p>
 
-      {/* Heading */}
-      <h1 className="w-full sm:max-w-[60rem] mx-auto text-center text-[#2e564d] mb-8 font-bold sm:text-[1.8rem] text-[1.2rem] relative z-20">
-        Showcase
-      </h1>
-
-      <div className="relative z-20 flex flex-col sm:flex-row sm:space-x-12 sm:items-center">
-        {/* Image scroll container */}
-        <div
-          ref={scrollRef}
-          className="flex space-x-6 overflow-x-auto no-scrollbar sm:overflow-visible sm:space-x-4 sm:flex-shrink-0 sm:w-1/2 scroll-snap-x"
-        >
-          <img
-            src={mobl}
-            alt="Mobile Design 1"
-            className="flex-shrink-0 w-[80vw] sm:w-full max-w-[300px] object-contain rounded-2xl shadow-lg scroll-snap-align-start"
-          />
-          <img
-            src={mob2}
-            alt="Mobile Design 2"
-            className="flex-shrink-0 w-[80vw] sm:w-full max-w-[300px] object-contain rounded-2xl shadow-lg scroll-snap-align-start"
-          />
+        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <button className="bg-[#00ca86] text-white px-6 py-3 rounded-lg flex items-center justify-center gap-2">
+            <i className="fab fa-apple"></i> Contact Now
+          </button>
+          <button className="bg-white border border-gray-300 px-6 py-3 rounded-lg justify-center flex items-center gap-2">
+            ▶ Watch the demo
+          </button>
         </div>
 
-    
-        <div className="sm:hidden flex justify-center mt-4 space-x-2">
-          {[0, 1].map((index) => (
-            <span
-              key={index}
-              className={`h-2 w-2 rounded-full ${
-                activeIndex === index ? "bg-[#2e564d]" : "bg-gray-400"
-              }`}
-            />
-          ))}
-        </div>
-
-        {/* Text section */}
-        <div className="hidden sm:block sm:w-1/2 text-[#2e564d] mt-8 sm:mt-0">
-          <h2 className="text-4xl font-semibold mb-4">AQI Monitoring App</h2>
-          <p className="text-2xl leading-relaxed">
-            This project is a <strong>MERN stack</strong> and <strong>React Native</strong>-based application designed to monitor Air Quality Index (AQI) values in real time. It integrates IoT sensors to collect data and presents the information in a mobile-friendly dashboard, providing users with easy access to environmental conditions anytime, anywhere.
-          </p>
+        <div className="pt-6">
+          <p className="text-sm text-gray-500 mb-3 font-semibold">Tech Stack</p>
+          <div className="flex flex-wrap gap-5 justify-center md:justify-start grayscale opacity-70">
+            <span className="font-bold">React Native</span>
+            <span className="font-bold">Tailwind CSS</span>
+            <span className="font-bold">Node.js</span>
+            <span className="font-bold">Express</span>
+            <span className="font-bold">MongoDB Atlas</span>
+          </div>
         </div>
       </div>
 
-      <style jsx>{`
-        .no-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        .no-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        .scroll-snap-x {
-          scroll-snap-type: x mandatory;
-        }
-        .scroll-snap-align-start {
-          scroll-snap-align: start;
-        }
-      `}</style>
+   
+      <div className="relative mt-10 md:mt-0 w-72 h-[600px] sm:w-80 sm:h-[650px] rounded-[45px] shadow-[0_0_2px_2px_rgba(255,255,255,0.1)] border-8 border-zinc-900">
+        <div className="absolute -inset-[1px] border-[3px] border-zinc-700 border-opacity-40 rounded-[37px] pointer-events-none"></div>
+
+        <div className="relative w-full h-full rounded-[37px] overflow-hidden bg-zinc-900/10">
+          <img
+            src={images[currentImage]}
+            alt="Mobile Design"
+            className="w-full h-full object-cover transition duration-700 ease-in-out"
+          />
+        </div>
+
+        <div className="absolute left-[-12px] top-20 w-[6px] h-8 bg-zinc-900 rounded-l-md shadow-md"></div>
+        <div className="absolute left-[-12px] top-36 w-[6px] h-12 bg-zinc-900 rounded-l-md shadow-md"></div>
+        <div className="absolute left-[-12px] top-52 w-[6px] h-12 bg-zinc-900 rounded-l-md shadow-md"></div>
+        <div className="absolute right-[-12px] top-36 w-[6px] h-16 bg-zinc-900 rounded-r-md shadow-md"></div>
+      </div>
     </div>
   );
 };
