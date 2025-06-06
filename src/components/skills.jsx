@@ -17,7 +17,7 @@ const Skills = ({ className }) => {
     <div className={`flex flex-col md:flex-row items-center gap-0 sm:gap-85 px-10 py-10 sm:px-20 sm:py-15 ${className}`}>
       
       <div className="max-w-xl text-center md:text-left space-y-6">
-        <h1 className="text-4xl font-bold text-black">
+        <h1 className="text-3xl sm:text-4xl font-bold text-black">
           Real-Time AQI Monitoring App
         </h1>
         <p className="text-gray-600 text-lg">
